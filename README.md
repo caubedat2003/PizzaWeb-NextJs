@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Layout Next JS
 
-## Getting Started
+## Layout
 
-First, run the development server:
+Layout is UI shared between multiple pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Layout contains children property, which nextjs populate the page content
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For example: 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Customer layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Customer page and menu page shared the same layout - colorful header
 
-## Learn More
+![customer_page](public/customer_page.png)
+![menu_page](public/menu_page.png)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Chef layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Chef page and chef order page shared the same layout - light blue header
 
-## Deploy on Vercel
+![chef_page](public/chef_page.png)
+![orders_page](public/orders_page.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Multiple layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Nextjs supports multiple layout. Beside header layout using in Customer and Chef, login page and register page shared the same layout, which is color gradient background
+
+![login](public/login.png)
+![register](public/register.png)
+
+## Nested layout
+
+Layout in NextJs can be nested
+
+For example in Chef order details page. Beside chef header layout, each page shared the same line "Chi tiết đơn hàng"
+
+![order1](public/order1.png)
+![order234](public/order234.png)
+
+# Responsive Tailwind CSS
+
+Tailwind uses mobile first breakpoint system. That is create mobile design, and adapt it to larger screen sizes by using breakpoints.
+
+By default, Tailwind have 5 breakpoints: sm, md, lg, xl, 2xl
+
+| Breakpoint prefix            | Minimum width             | CSS |
+|----------------------------|----------------------------|----------|
+| sm                     | 40rem (640px)          | @media (width >= 40rem) { ... }     |
+| md                     | 48rem (768px)          | @media (width >= 48rem) { ... }     |
+| lg                     | 64rem (1024px)         | @media (width >= 64rem) { ... }     |
+| xl                     | 80rem (1280px)         | @media (width >= 80rem) { ... }     |
+| 2xl                    | 96rem (1536px)         | @media (width >= 96rem) { ... }     |
