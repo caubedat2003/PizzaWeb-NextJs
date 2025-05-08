@@ -10,12 +10,9 @@ export default function ChefLayout({ children }: Readonly<{
                 </div>
 
                 <div className="flex space-x-3">
-                    <button type="button" className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50">
-                        Menu
-                    </button>
-                    <button type="button" className="inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">
-                        Gọi món
-                    </button>
+                    <a href="/chef/orders" type="button" className="inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">
+                        Xem đơn hàng
+                    </a>
                 </div>
             </div>
             <main className="p-4"> {children}</main>
