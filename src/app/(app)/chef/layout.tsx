@@ -3,7 +3,7 @@ export default function ChefLayout({ children }: Readonly<{
 }>) {
     return (
         <div>
-            <div className="flex items-center justify-between px-4 py-6 bg-white shadow-sm">
+            <div className="flex items-center justify-between px-4 py-6 bg-blue-50 shadow-sm">
                 <div className="min-w-0 flex-1">
                     <h1 className="text-3xl font-bold text-gray-900">Pizza Shop</h1>
                     <p className="mt-1 text-sm text-gray-500">Đầu bếp</p>
