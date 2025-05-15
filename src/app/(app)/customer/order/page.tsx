@@ -87,7 +87,7 @@ export default function OrderPage() {
                         <p className="text-sm text-gray-600">
                             {(pizza.topping ?? []).join(', ')}
                         </p>
-                        <p className="mt-2 font-bold">{pizza.price} SEK</p>
+                        <p className="mt-2 font-bold">{pizza.price} USD</p>
                         <div className="flex items-center mt-2 gap-2">
                             <button onClick={() => updateQuantity(pizza.id, -1)} className="px-2 bg-gray-300 rounded">−</button>
                             <span>{cart[pizza.id] || 0}</span>

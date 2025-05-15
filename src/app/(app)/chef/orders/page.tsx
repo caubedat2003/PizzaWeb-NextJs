@@ -6,7 +6,7 @@ export default function OrdersListPage() {
     const mockOrderIds = [1, 2, 3];
 
     return (
-        <div>
+        <div className="h-full">
             <h1 className="text-2xl font-bold mb-4">Đơn hàng mới</h1>
             <ul className="space-y-2">
                 {mockOrderIds.map((id) => (

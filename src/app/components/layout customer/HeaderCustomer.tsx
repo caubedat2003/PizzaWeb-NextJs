@@ -12,7 +12,7 @@ export default function HeaderCustomer() {
                     <p className={style['p-text']}>Khách hàng</p>
                 </div>
 
-                <div className="flex space-x-3">
+                <div className={style['btn-group']}>
                     <a href="/login" type="button" className={style['btn-black']}>
                         Đăng nhập
                     </a>

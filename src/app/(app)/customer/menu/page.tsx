@@ -36,7 +36,7 @@ export default function MenuPage() {
                         <p className="text-sm text-gray-600">
                             {(pizza.topping ?? []).join(', ')}
                         </p>
-                        <p className="font-bold mt-2">{pizza.price} SEK</p>
+                        <p className="font-bold mt-2">{pizza.price} USD</p>
                     </div>
                 ))}
             </div>
