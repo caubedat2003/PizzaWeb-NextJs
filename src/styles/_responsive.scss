@@ -21,3 +21,11 @@
     width: 100%;
     border-radius: 0.5rem;
 }
+
+.bg-auth {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #fff1be, #f2a4c6, #d779da);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
