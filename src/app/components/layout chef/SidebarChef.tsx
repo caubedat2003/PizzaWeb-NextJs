@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import styles from './SidebarChef.module.scss';
+import '@/styles/css/chef/sidebar-chef.css';
 
 export default function Sidebar() {
     const [open, setOpen] = useState(true);
@@ -21,13 +21,17 @@ export default function Sidebar() {
     }, []);
 
     return (
-        <div className={`${styles.sidebar} ${open ? styles.open : styles.closed}`}>
-            <button className={styles.toggleBtn} onClick={() => setOpen(!open)}>
+        <div className={`background ${open ? 'w-[250px]' : 'w-[60px]'}`}>
+            <button className="btn-open" onClick={() => setOpen(!open)}>
                 ☰
             </button>
-            <nav className={styles.nav}>
-                <Link href="/chef/orders" className={styles['menu-tab']}>Đơn hàng</Link>
-                <Link href="/customer/profile" className={styles['menu-tab']}>Tài khoản</Link>
+            <nav className="nav">
+                {open && (
+                    <>
+                        <Link href="/chef/orders" className="menu-tab">Đơn hàng</Link>
+                        <Link href="/chef/profile" className="menu-tab">Tài khoản</Link>
+                    </>
+                )}
             </nav>
         </div>
     );

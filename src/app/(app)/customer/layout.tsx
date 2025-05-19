@@ -11,7 +11,10 @@ export default function CustomerLayout({ children }: Readonly<{
                 <SidebarCustomer />
 
                 <main className="flex-1 p-4">
+                    {/* <CustomerMain> layout de dieu chinh responsive */}
                     {children}
+                    {/* </CustomerMain> */}
+                    {/* viet css thanh cac file rieng cho tung chuc nang dung @apply tailwind */}
                 </main>
             </div>
         </div>

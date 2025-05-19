@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .header-gradient-blue {
+        @apply flex flex-col items-center justify-center gap-4 text-center px-4 py-6 bg-gradient-to-br from-[#b9dff8] via-[#cdcefc] to-[#dcc2ff] text-white md:flex-row md:justify-between md:text-left md:gap-1;
+    }
+
+    .btn-black {
+        @apply px-6 py-3 rounded-2xl shadow-md bg-black text-white font-semibold hover:bg-white hover:text-black transition;
+    }
+
+    .btn-group {
+        @apply flex md:flex-row items-center md:items-stretch gap-2;
+    }
+
+    .btn-transparent {
+        @apply px-6 py-3 rounded-2xl shadow-md bg-transparent border border-white text-black font-semibold hover:bg-white hover:text-black transition;
+    }
+
+    .h1-text {
+        @apply text-4xl font-bold text-gray-800;
+    }
+
+    .p-text {
+        @apply mt-1 text-sm text-gray-600;
+    }
+}

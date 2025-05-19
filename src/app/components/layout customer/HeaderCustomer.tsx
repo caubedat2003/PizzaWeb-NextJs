@@ -1,22 +1,20 @@
-import style from '@/app/components/layout customer/HeaderCustomer.module.scss'
+import '@/styles/css/customer/header-cus.css';
+
 
 export default function HeaderCustomer() {
     return (
         <div className="">
-            <div className={style['header-gradient-pink']}>
-                <div>
-
-                </div>
+            <div className="header-gradient-pink">
                 <div className="min-w-0 flex-1">
-                    <h1 className={style['h1-text']}>Pizza Shop</h1>
-                    <p className={style['p-text']}>Khách hàng</p>
+                    <h1 className="h1-text">Pizza Shop</h1>
+                    <p className="p-text">Khách hàng</p>
                 </div>
 
-                <div className={style['btn-group']}>
-                    <a href="/login" type="button" className={style['btn-black']}>
+                <div className="btn-group">
+                    <a href="/login" type="button" className="btn-black">
                         Đăng nhập
                     </a>
-                    <a href="/register" type="button" className={style['btn-transparent']}>
+                    <a href="/register" type="button" className="btn-transparent">
                         Đăng ký
                     </a>
                 </div>

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .bg-auth {
+        @apply min-h-screen bg-gradient-to-br from-[#fff1be] via-[#f2a4c6] to-[#d779da] flex items-center justify-center;
+    }
+}

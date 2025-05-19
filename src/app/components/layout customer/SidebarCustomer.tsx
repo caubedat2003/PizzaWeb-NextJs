@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import styles from './SidebarCustomer.module.scss';
+import '@/styles/css/customer/sidebar-cus.css';
 
 export default function Sidebar() {
     const [open, setOpen] = useState(true);
@@ -21,14 +21,18 @@ export default function Sidebar() {
     }, []);
 
     return (
-        <div className={`${styles.sidebar} ${open ? styles.open : styles.closed}`}>
-            <button className={styles.toggleBtn} onClick={() => setOpen(!open)}>
+        <div className={`background ${open ? 'w-[250px]' : 'w-[60px]'}`}>
+            <button className="btn-open" onClick={() => setOpen(!open)}>
                 ☰
             </button>
-            <nav className={styles.nav}>
-                <Link href="/customer/menu" className={styles['menu-tab']}>Menu</Link>
-                <Link href="/customer/order" className={styles['menu-tab']}>Gọi món</Link>
-                <Link href="/customer/profile" className={styles['menu-tab']}>Tài khoản</Link>
+            <nav className="nav">
+                {open && (
+                    <>
+                        <Link href="/customer/menu" className="menu-tab">Menu</Link>
+                        <Link href="/customer/order" className="menu-tab">Gọi món</Link>
+                        <Link href="/customer/pizza" className="menu-tab">Giới thiệu</Link>
+                    </>
+                )}
             </nav>
         </div>
     );
