@@ -1,4 +1,4 @@
-# Layout Next JS
+# Wrapper Layout Next JS
 
 ## Layout
 
@@ -6,38 +6,45 @@ Layout is UI shared between multiple pages
 
 Layout contains children property, which nextjs populate the page content
 
-For example: 
+A wrapper layout is like a reusable page template that wraps your content with shared components like a Header and Sidebar. It helps keep your site layout consistent on every page.
 
-### Customer layout
+## Usage
 
-Customer page and menu page shared the same layout - colorful header
+### 🧩 Layout Structure
+This layout includes three parts:
 
-![customer_page](public/customer_page.png)
-![menu_page](public/menu_page.png)
+1. Header – A bar at the top with the title and login/logout buttons
 
+2. Sidebar – A vertical menu on the left side
 
-### Chef layout
+3. Children – The main content in the center (this part changes based on the page)
 
-Chef page and chef order page shared the same layout - light blue header
+<!-- ![structure_layout](public/structure_layout.png) -->
+```tsx
+<div>
+  <HeaderCustomer /> {/* Top bar with title and login/logout */}
 
-![chef_page](public/chef_page.png)
-![orders_page](public/orders_page.png)
+  <div className="flex flex-1">
+    <SidebarCustomer /> {/* Left sidebar navigation */}
 
-## Multiple layout
+    <main className="flex-1 p-4">
+      {children} {/* This is where the page-specific content shows up */}
+    </main>
+  </div>
+</div>
+```
 
-Nextjs supports multiple layout. Beside header layout using in Customer and Chef, login page and register page shared the same layout, which is color gradient background
+### 💡 Visual Result
 
-![login](public/login.png)
-![register](public/register.png)
+Here’s what this layout looks like when it’s rendered:
 
-## Nested layout
+- Header: A horizontal pink gradient bar at the top with your website title and Login/Logout buttons.
 
-Layout in NextJs can be nested
+- Sidebar: A vertical pastel-colored menu on the left side.
 
-For example in Chef order details page. Beside chef header layout, each page shared the same line "Chi tiết đơn hàng"
+- Main Content (Children): The center area, where dynamic content like the Pizza Menu appears.
 
-![order1](public/order1.png)
-![order234](public/order234.png)
+![structure_layout](public/layout_interface.png)
 
 # Responsive Tailwind CSS
 
@@ -55,7 +62,81 @@ By default, Tailwind have 5 breakpoints: sm, md, lg, xl, 2xl
 
 For example
 
-Normally, in mobile size view, the image of pizza loaded first and placed above paragraph (image 1). When stretching the window size, the image turning bigger and the paragragh re-align to fit the size page. Keep stretching until the size page meet breakpoint (here is md - medium - 768px), the image and paragragh align in same line because of the activation of breakpoint prefix.
+```
+font-light
+```
+By default, this css can be applied to all screen width
 
-![pizza_vertically](public/pizza_vertically.png)
-![pizza_horizonlly](public/pizza_horizonlly.png)
+```
+md:font-bold
+```
+When adding this css line, only activated when the screen is medium (≥768px) or larger
+
+```css
+.decorative-text {
+    @apply md:font-bold font-light;
+}
+```
+When putting them together, normally the text should be in light font. Whenever the screen width is ≥768px or larger, the font text should be in bold
+font.
+
+## Usage
+
+### 🛠 Importing CSS File
+Firstly, import css file in the .tsx page
+
+```tsx
+import '@/styles/css/customer/pizza.css';
+```
+
+### 🧱 Add the Class to TSX file
+At page file, call css class as normal
+
+```html
+<div className="container-pizza">
+    <!-- Your content here -->
+</div>
+```
+
+### 🎨 Setup Tailwind
+
+In css file, import Tailwind library
+
+```css
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### ✨ Define Custom Style with Tailwind Utilities
+Create your own class using Tailwind’s utility classes. Do this inside the @layer base block.
+
+```css
+@layer base {
+    .container-pizza {
+        @apply grid gap-8 md:grid-cols-2 md:items-center md:text-left text-center;
+    }
+}
+```
+
+#### 🧠 What Does This Mean?
+- @layer base: This is where you define basic global styles.
+
+- .container-pizza: This is your custom class name.
+
+- @apply: This lets you use Tailwind classes inside your custom class.
+
+#### 💡 How Responsive Works Here
+- grid gap-8: Always use a grid layout with spacing between items.
+
+- text-center: Text is centered on small screens (default).
+
+- md:grid-cols-2, md:items-center, md:text-left: These only activate when the screen is medium (≥768px) or larger.
+
+
+### Complete code
+
+![class_naming](public/class_naming.png)
+
+![tailwind_css](public/tailwind_css.png)

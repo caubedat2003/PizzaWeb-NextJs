@@ -29,7 +29,7 @@ export default function MenuPage() {
     return (
         <div>
             <h1 className="text-2xl font-bold mb-4">Thực đơn Pizza</h1>
-            <div className="grid grid-cols-1 laptop:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {menu.map((pizza) => (
                     <div key={pizza.id} className="border p-4 rounded shadow">
                         <h2 className="text-xl font-semibold">{pizza.name}</h2>
