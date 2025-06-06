@@ -46,6 +46,11 @@ Here’s what this layout looks like when it’s rendered:
 
 ![structure_layout](public/layout_interface.png)
 
+
+### Complete code
+![structure_layout](public/structure_layout.png)
+
+
 # Responsive Tailwind CSS
 
 Tailwind uses mobile first breakpoint system. That is create mobile design, and adapt it to larger screen sizes by using breakpoints.
